@@ -33,4 +33,9 @@ class CalculatorTest {
     void refusesToDivideByZero() {
         assertThrows(ArithmeticException.class, () -> calculator.divide(1, 0));
     }
+
+    @Test
+    void takesModulo() {
+        assertEquals(1, calculator.modulo(7, 3));
+    }
 }
