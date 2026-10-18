@@ -5,8 +5,10 @@ jobs:
   test_build:
     runs-on: ubuntu-latest
     steps:
+      - name: get-code
+        uses: actions/checkout@v7
       - name: build-project
-        run: mvn clean install
+        run: ./mvnw clean install
       - name: test-project
-        run: mvn clean test
+        run: ./mvnw clean test
 
