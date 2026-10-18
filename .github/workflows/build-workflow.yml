@@ -7,6 +7,11 @@ jobs:
     steps:
       - name: get-code
         uses: actions/checkout@v7
+      - name: setup-java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
       - name: build-project
         run: ./mvnw clean install
       - name: test-project
